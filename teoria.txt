@@ -1,0 +1,35 @@
+// enzyme es una libreria creada por airbeanbe para facilitar el test con jest
+$ npm i jest enzyme enzyme-adapter-react-16 --save-dev
+
+se crea un archivo de configuracion "setup.test.js" y en el package.json se 
+crea un indice de jest para pasarle esa ruta del archivo
+
+Jest arrojara un error ya que noo sabe interpretar los archivos con estlos
+entonces se configura un mocks para ignorarlo y se coloca en el package.json
+
+para usar el Header tengo que usar otro mocks ya que como esta conectado
+con provider, redux este recibe cierto parametros que tengo que de cierta forma eliminar
+tengo que crear toda una estructura de provider para poder montar esos componentes
+
+para el product se necesita otra mock ya que este es un componente en donde
+le hacen render con props de los articulos y hay que pasarselos 
+
+
+snapShot es para realizar un test donde el componente siempre 
+tendra un valor estaticos 
+Los test de snapshot son de gran utilidad cuando se quiere asegurar
+que la UI no cambia inesperadamente
+para esto debemos convertir el componente ne object json
+$ npm i react-test-renderer --save-dev
+este crea una carpeta llamada snapShot done crea el objecto, compoente.
+si quiero actualizar el snapShot debo lanzar el codigo
+$ jest --updateSnapshot
+
+para ver los mensaje descriptivos en la terminal debo agregar en el
+package.json el indice "verbose": true
+
+para hacer peticiones fetch debemos instalar 
+$ npm install jest-fetch-mock --save-dev
+e incorporarlo en el archivo setupTest para utilizar el fetch y no 
+el del navegador 
+global.fetch = require('jest-fetch-mock');
