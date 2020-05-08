@@ -19,7 +19,7 @@ describe('<Product />', () => {
     test('Comprobar el boton de comprar', () => {
         // esta fuincion de jest que nos provee es para simular la 
         // ejecucion de handleAddToCart sin llamar a la real
-        // es una funcion de simulacion 
+        // es una funcion de simulacion  s
         const handleAddToCart = jest.fn() ;
 
         const wrapper = mount(
